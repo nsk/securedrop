@@ -1292,7 +1292,7 @@ def test_admin_add_user_yubikey_odd_length(journalist_app, test_admin):
                                   is_admin=None,
                                   is_hotp=True,
                                   otp_secret='123'))
-        assert 'HOTP secrets are 40 characters' in resp.data.decode('utf-8')
+        assert 'HOTP secrets must be 40 characters' in resp.data.decode('utf-8')
 
 
 def test_admin_add_user_yubikey_valid_length(journalist_app, test_admin):
